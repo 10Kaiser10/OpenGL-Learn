@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\stb_image\stb_image.cpp" />
-    <ClCompile Include="..\source\05_textureSquare\textureSquare.cpp" />
+    <ClCompile Include="..\source\08_rotatingCube\08_rotatingCube.cpp" />
     <ClCompile Include="..\source\helpers\setup.cpp" />
     <ClCompile Include="..\source\helpers\shaderProc.cpp" />
     <ClCompile Include="..\source\helpers\texture.cpp" />
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\glew-2.1.0\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\stb_image;$(SolutionDir)source\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\glew-2.1.0\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\stb_image;$(SolutionDir)source\helpers;$(SolutionDir)Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\glew-2.1.0\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\stb_image;$(SolutionDir)source\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\glew-2.1.0\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\stb_image;$(SolutionDir)source\helpers;$(SolutionDir)Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

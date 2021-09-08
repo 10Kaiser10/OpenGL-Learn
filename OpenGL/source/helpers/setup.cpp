@@ -71,7 +71,7 @@ GLFWwindow* glfwSetup(bool debugMode)
     if (debugMode) glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
 
     /* Create a windowed mode window and its OpenGL context */
-    win = glfwCreateWindow(640, 480, "Two Triangles", NULL, NULL);
+    win = glfwCreateWindow(640, 640, "Two Triangles", NULL, NULL);
     if (!win)
     {
         glfwTerminate();
