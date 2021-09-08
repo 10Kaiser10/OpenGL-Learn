@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\OpenGL",
-    "\\OpenGL\\source",
     "\\OpenGL\\source\\08_rotatingCube"
   ],
-  "SelectedNode": "\\OpenGL\\source\\08_rotatingCube\\08_rotatingCube.cpp",
+  "SelectedNode": "\\OpenGL\\OpenGL.sln",
   "PreviewInSolutionExplorer": false
 }
