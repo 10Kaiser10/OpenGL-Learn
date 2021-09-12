@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\OpenGL",
-    "\\OpenGL\\source\\08_rotatingCube"
+    "\\OpenGL\\source",
+    "\\OpenGL\\source\\10_cameraControl",
+    "\\OpenGL\\source\\helpers"
   ],
-  "SelectedNode": "\\OpenGL\\OpenGL.sln",
+  "SelectedNode": "\\OpenGL\\source\\helpers\\FPSCam.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -30,8 +30,11 @@
     <ClCompile Include="..\source\helpers\shaderProc.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\08_rotatingCube\08_rotatingCube.cpp">
+    <ClCompile Include="..\source\10_cameraControl\10_cameraControl.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\helpers\FPSCam.cpp">
+      <Filter>Source Files\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Dependencies\stb_image\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\helpers\FPSCam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

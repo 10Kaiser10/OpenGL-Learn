@@ -75,15 +75,11 @@ int main(void)
     glEnableVertexAttribArray(1);
 
     //texture stuff
-    std::string doomPath = "../../../assets/MFDOOM.jpeg";
-    std::string gradPath = "../../../assets/graduation.jpeg";
-    unsigned int doomTex = getTexture(doomPath);
-    unsigned int gradTex = getTexture(gradPath);
+    std::string dogePath = "../../../assets/doge.jpg";
+    unsigned int dogeTex = getTexture(dogePath);
 
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, doomTex);
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, gradTex);
+    glBindTexture(GL_TEXTURE_2D, dogeTex);
 
     //shader stuff
     std::string vertPath = "../../../source/08_rotatingCube/vertex.shader";
@@ -93,7 +89,6 @@ int main(void)
     glUseProgram(shaderProg);
 
     glUniform1i(glGetUniformLocation(shaderProg, "tex1"), 0);
-    glUniform1i(glGetUniformLocation(shaderProg, "tex2"), 1);
 
     //transformations
     glm::mat4 view = glm::mat4(1.0f);

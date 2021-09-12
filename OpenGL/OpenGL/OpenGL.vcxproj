@@ -20,13 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\stb_image\stb_image.cpp" />
-    <ClCompile Include="..\source\08_rotatingCube\08_rotatingCube.cpp" />
+    <ClCompile Include="..\source\10_cameraControl\10_cameraControl.cpp" />
+    <ClCompile Include="..\source\helpers\FPSCam.cpp" />
     <ClCompile Include="..\source\helpers\setup.cpp" />
     <ClCompile Include="..\source\helpers\shaderProc.cpp" />
     <ClCompile Include="..\source\helpers\texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Dependencies\stb_image\stb_image.h" />
+    <ClInclude Include="..\source\helpers\FPSCam.h" />
     <ClInclude Include="..\source\helpers\setup.h" />
     <ClInclude Include="..\source\helpers\shaderProc.h" />
     <ClInclude Include="..\source\helpers\texture.h" />
