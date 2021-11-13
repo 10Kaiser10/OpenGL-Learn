@@ -4,8 +4,9 @@
     "\\OpenGL",
     "\\OpenGL\\source",
     "\\OpenGL\\source\\10_cameraControl",
+    "\\OpenGL\\source\\11_lightingSetup",
     "\\OpenGL\\source\\helpers"
   ],
-  "SelectedNode": "\\OpenGL\\source\\helpers\\FPSCam.cpp",
+  "SelectedNode": "\\OpenGL\\source\\helpers\\FPSCam.h",
   "PreviewInSolutionExplorer": false
 }

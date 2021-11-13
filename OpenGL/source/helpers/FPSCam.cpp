@@ -2,7 +2,7 @@
 #include <glm/glm.hpp>
 #include <GLFW/glfw3.h>
 #include <FPSCam.h>
-
+#include <iostream>
 
 void FPSCamera::keyboardMovement(float deltaTime)
 {
@@ -59,7 +59,7 @@ void FPSCamera::mousePosition(double xpos, double ypos)
 	double changeY = mousePosy - ypos;
 	mousePosx = xpos;
 	mousePosy = ypos;
-
+	
 	pitch += mouseSensitivity * changeY;
 	yaw += mouseSensitivity * changeX;
 

@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\stb_image\stb_image.cpp" />
-    <ClCompile Include="..\source\10_cameraControl\10_cameraControl.cpp" />
+    <ClCompile Include="..\source\11_lightingSetup\11_lightingSetup.cpp" />
     <ClCompile Include="..\source\helpers\FPSCam.cpp" />
     <ClCompile Include="..\source\helpers\setup.cpp" />
     <ClCompile Include="..\source\helpers\shaderProc.cpp" />
