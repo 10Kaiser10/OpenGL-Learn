@@ -85,3 +85,8 @@ glm::mat4 FPSCamera::getProjectionMatrix()
 	proj = glm::perspective(glm::radians(fov), 640.0f / 640.0f, 0.1f, 100.0f);
 	return proj;
 }
+
+glm::vec3 FPSCamera::getPosition()
+{
+	return camPos;
+}

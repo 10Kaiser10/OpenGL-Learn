@@ -33,7 +33,7 @@
     <ClCompile Include="..\Dependencies\stb_image\stb_image.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\11_lightingSetup\11_lightingSetup.cpp">
+    <ClCompile Include="..\source\12_phongShading\12_phongShading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

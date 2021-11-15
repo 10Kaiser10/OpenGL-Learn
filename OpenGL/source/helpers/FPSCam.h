@@ -32,4 +32,6 @@ public:
 	void scrollOffset(double scrollVal);
 
 	glm::mat4 getProjectionMatrix();
+
+	glm::vec3 getPosition();
 };

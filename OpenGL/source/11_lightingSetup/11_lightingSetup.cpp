@@ -26,12 +26,12 @@ void UpdateDeltaTime()
 
 void mousePosCallback(GLFWwindow* window, double xpos, double ypos)
 {
-    //cam->mousePosition(xpos, ypos);
+    cam->mousePosition(xpos, ypos);
 }
 
 void scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
 {
-    //cam->scrollOffset(yoffset);
+    cam->scrollOffset(yoffset);
 }
 
 int main(void)
@@ -43,41 +43,48 @@ int main(void)
     glEnable(GL_DEPTH_TEST);
 
     //vertex data
-    float sourceVertices[] = {
-         1.0,  1.0,  1.0,
-         1.0,  1.0, -1.0,
-         1.0, -1.0,  1.0,
-         1.0, -1.0, -1.0,
-        -1.0,  1.0,  1.0,
-        -1.0,  1.0, -1.0,
-        -1.0, -1.0,  1.0,
-        -1.0, -1.0, -1.0,
-    };
-
-    float objectVertices[] = {
-         1.0,  1.0,  1.0,
-         1.0,  1.0, -1.0,
-         1.0, -1.0,  1.0,
-         1.0, -1.0, -1.0,
-        -1.0,  1.0,  1.0,
-        -1.0,  1.0, -1.0,
-        -1.0, -1.0,  1.0,
-        -1.0, -1.0, -1.0,
-    };
-
-    int indices[] = {
-        0, 2, 3,
-        0, 3, 1,
-        0, 4, 2,
-        2, 4, 6,
-        0, 1, 5,
-        0, 5, 4,
-        1, 3, 5,
-        3, 7, 5,
-        5, 7, 4,
-        4, 7, 6,
-        2, 6, 7,
-        2, 7, 3,
+    float vertices[] = {
+    -0.5f, -0.5f, -0.5f,
+     0.5f, -0.5f, -0.5f,
+     0.5f,  0.5f, -0.5f,
+     0.5f,  0.5f, -0.5f,
+    -0.5f,  0.5f, -0.5f,
+    -0.5f, -0.5f, -0.5f,
+                        
+    -0.5f, -0.5f,  0.5f,
+     0.5f, -0.5f,  0.5f,
+     0.5f,  0.5f,  0.5f,
+     0.5f,  0.5f,  0.5f,
+    -0.5f,  0.5f,  0.5f,
+    -0.5f, -0.5f,  0.5f,
+                        
+    -0.5f,  0.5f,  0.5f,
+    -0.5f,  0.5f, -0.5f,
+    -0.5f, -0.5f, -0.5f,
+    -0.5f, -0.5f, -0.5f,
+    -0.5f, -0.5f,  0.5f,
+    -0.5f,  0.5f,  0.5f,
+                        
+     0.5f,  0.5f,  0.5f,
+     0.5f,  0.5f, -0.5f,
+     0.5f, -0.5f, -0.5f,
+     0.5f, -0.5f, -0.5f,
+     0.5f, -0.5f,  0.5f,
+     0.5f,  0.5f,  0.5f,
+                        
+    -0.5f, -0.5f, -0.5f,
+     0.5f, -0.5f, -0.5f,
+     0.5f, -0.5f,  0.5f,
+     0.5f, -0.5f,  0.5f,
+    -0.5f, -0.5f,  0.5f,
+    -0.5f, -0.5f, -0.5f,
+                        
+    -0.5f,  0.5f, -0.5f,
+     0.5f,  0.5f, -0.5f,
+     0.5f,  0.5f,  0.5f,
+     0.5f,  0.5f,  0.5f,
+    -0.5f,  0.5f,  0.5f,
+    -0.5f,  0.5f, -0.5f,
     };
 
     //source light vao
@@ -88,19 +95,13 @@ int main(void)
     unsigned int sourceVbo;
     glGenBuffers(1, &sourceVbo);
     glBindBuffer(GL_ARRAY_BUFFER, sourceVbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(sourceVertices), sourceVertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-
-    unsigned int sourceEbo;
-    glGenBuffers(1, &sourceEbo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sourceEbo);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     //unbinding buffers and vao
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     //object vao
     unsigned int objectVao;
@@ -110,19 +111,13 @@ int main(void)
     unsigned int objectVbo;
     glGenBuffers(1, &objectVbo);
     glBindBuffer(GL_ARRAY_BUFFER, objectVbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(objectVertices), objectVertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-
-    unsigned int objectEbo;
-    glGenBuffers(1, &objectEbo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objectEbo);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     //unbinding buffers and vao
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     //shaders
     std::string sourceVertPath = "../../../source/11_lightingSetup/sourceVertex.shader";
@@ -164,7 +159,7 @@ int main(void)
         //source model matrix
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(2.0, 3.0, 3.0));
-        model = glm::scale(model, glm::vec3(0.2f));
+        model = glm::scale(model, glm::vec3(0.4f));
 
         glBindVertexArray(sourceVao);
         glUseProgram(sourceShaderProg);
@@ -172,11 +167,12 @@ int main(void)
         glUniformMatrix4fv(glGetUniformLocation(sourceShaderProg, "projection"), 1, false, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(sourceShaderProg, "model"), 1, false, glm::value_ptr(model));
 
-        glDrawElements(GL_TRIANGLES, 12*3, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 12 * 3);
 
         //object model matrix
         model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0, 0.0, 0.0));
+        model = glm::scale(model, glm::vec3(2.0f));
 
         glBindVertexArray(objectVao);
         glUseProgram(objectShaderProg);
@@ -184,7 +180,7 @@ int main(void)
         glUniformMatrix4fv(glGetUniformLocation(objectShaderProg, "projection"), 1, false, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(objectShaderProg, "model"), 1, false, glm::value_ptr(model));
 
-        glDrawElements(GL_TRIANGLES, 12 * 3, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 12*3);
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);

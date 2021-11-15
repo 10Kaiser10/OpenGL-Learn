@@ -5,6 +5,7 @@
     "\\OpenGL\\source",
     "\\OpenGL\\source\\10_cameraControl",
     "\\OpenGL\\source\\11_lightingSetup",
+    "\\OpenGL\\source\\12_phongShading",
     "\\OpenGL\\source\\helpers"
   ],
   "SelectedNode": "\\OpenGL\\source\\helpers\\FPSCam.h",
